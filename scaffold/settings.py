@@ -39,10 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangosecure',
-    'csp',
-    'cspreports',
     'djangae.contrib.gauth',
     'djangae.contrib.security',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,14 +73,12 @@ SECURE_CHECKS = [
     "djangosecure.check.djangosecure.check_sts",
     "djangosecure.check.djangosecure.check_frame_deny",
     "djangosecure.check.djangosecure.check_ssl_redirect",
-    "scaffold.checks.check_session_csrf_enabled",
-    "scaffold.checks.check_csp_is_not_report_only"
 ]
 
 CSP_REPORT_URI = reverse_lazy('report_csp')
-CSP_REPORTS_LOG = True
+CSP_REPORTS_LOG = False
 CSP_REPORTS_LOG_LEVEL = 'warning'
-CSP_REPORTS_SAVE = True
+CSP_REPORTS_SAVE = False
 CSP_REPORTS_EMAIL_ADMINS = False
 
 ROOT_URLCONF = 'scaffold.urls'
@@ -92,7 +89,7 @@ WSGI_APPLICATION = 'scaffold.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-gb'
 
 TIME_ZONE = 'UTC'
 
